@@ -21,6 +21,7 @@ class LoginService {
     } else {
       return toast.error('로그인 정보가 틀렸습니다.');
     }
+    return gradeResult;
   }
 
   set(info: { id: string; pw: string }) {

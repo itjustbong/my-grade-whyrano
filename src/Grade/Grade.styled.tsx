@@ -28,6 +28,7 @@ const LogoutText = styled.div`
   text-decoration: underline;
   text-align: center;
   color: gray;
+  cursor: pointer;
 `;
 
 export {

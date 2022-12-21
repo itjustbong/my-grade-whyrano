@@ -5,21 +5,22 @@ import { ReactComponent as MainLogo } from '../assets/main_logo.svg';
 import { LoginService } from '../service/service.sign';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { postSignIn } from '../api/sign';
 import { EnlargeMedal3D } from '../EnlargeMedal3D';
-
 
 const Login = () => {
   const navigate = useNavigate();
   const loginService = new LoginService();
-  const onLogin = async (id: string, pw: string) => {
-    await loginService.fetchLogin({ id, pw });
-  };
   useEffect(() => {
     if (loginService.isUserLogged()) {
       navigate('/grade');
     }
   }, []);
+  const onLogin = async (id: string, pw: string) => {
+    const loginResult = await loginService.fetchLogin({ id, pw });
+    if (loginResult === 1) {
+      navigate('/grade');
+    }
+  };
   return (
     <Layout>
       {/* <EnlargeMedal3D /> */}

@@ -54,8 +54,7 @@ export function LoginBox({ onLogin }: { onLogin: Props }): JSX.Element {
 
     if (signProxy.id === null) notify('id');
     else if (signProxy.pw === null) notify('pw');
-    // else onLogin('signProxy.id', 'signProxy.pw');
-    else onLogin('20170368', 'at@tmddn851');
+    else onLogin(signProxy.id, signProxy.pw);
   };
 
   return (
