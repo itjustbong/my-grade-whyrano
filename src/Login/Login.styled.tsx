@@ -44,6 +44,7 @@ function LoginBox(): JSX.Element {
             width: '20rem',
             borderRadius: '15px',
           }}
+          type="password"
         />
       </form>
       <Empty height="2rem" />
