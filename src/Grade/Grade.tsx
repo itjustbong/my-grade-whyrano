@@ -3,9 +3,10 @@ import { useRef, useState } from 'react';
 import GradeScratch from '../GradeScratch/GradeScratch.component';
 import { Spacer } from '../GradeScratch/GradeScratch.styled';
 import SnowFall from '../SnowFall/SnowFall';
-import { Header } from './Grade.component';
+import { BottomFlotingButton, Header } from './Grade.component';
 import { gradeServerToClient } from './Grade.dto';
 import { GRADE_MOCK_UP } from './Grade.mockup';
+import { LogoutText } from './Grade.styled';
 
 const Grade = () => {
   const [openGrade, setOpenGrade] = useState<boolean>(false);
@@ -25,6 +26,7 @@ const Grade = () => {
     <div>
       {openGrade && <SnowFall />}
       <Header />
+      <BottomFlotingButton />
       {gradeServerToClient(GRADE_MOCK_UP).map(info => (
         <>
           <GradeScratch
@@ -35,6 +37,7 @@ const Grade = () => {
           <Spacer />
         </>
       ))}
+      <LogoutText>로그아웃</LogoutText>
     </div>
   );
 };

@@ -15,4 +15,25 @@ const HeaderUserInfoFont = styled.span`
   font-size: 0.75rem;
 `;
 
-export { HeaderArea, HeaderFont, HeaderUserInfoFont };
+const FlotingButton = styled.div`
+  width: 3rem;
+  height: 3rem;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 50%;
+  position: fixed;
+`;
+
+const LogoutText = styled.div`
+  text-decoration: underline;
+  text-align: center;
+  color: gray;
+`;
+
+export {
+  HeaderArea,
+  HeaderFont,
+  HeaderUserInfoFont,
+  FlotingButton,
+  LogoutText,
+};

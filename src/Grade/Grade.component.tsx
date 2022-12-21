@@ -1,4 +1,9 @@
-import { HeaderArea, HeaderFont, HeaderUserInfoFont } from './Grade.styled';
+import {
+  FlotingButton,
+  HeaderArea,
+  HeaderFont,
+  HeaderUserInfoFont,
+} from './Grade.styled';
 import { ReactComponent as MainLogo } from '../assets/main_logo.svg';
 
 const Header = () => {
@@ -12,4 +17,12 @@ const Header = () => {
   );
 };
 
-export { Header };
+const BottomFlotingButton = () => {
+  return (
+    <FlotingButton>
+      <img src="/img/refresh.png" width={'100%'} />
+    </FlotingButton>
+  );
+};
+
+export { Header, BottomFlotingButton };
