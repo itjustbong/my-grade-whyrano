@@ -1,6 +1,6 @@
 import http from './http';
 
-type PostSignInType = { id: string; pw: string };
+export type PostSignInType = { id: string; pw: string };
 
 const ROUTE = '';
 

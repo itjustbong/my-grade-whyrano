@@ -1,9 +1,12 @@
 import React from 'react';
-import { Layout, LoginBox, Empty } from './Login.styled';
+import { LoginBox } from './Login.component';
+import { Layout, Empty } from './Login.styled';
 import { ReactComponent as MainLogo } from '../assets/main_logo.svg';
-import { postSignIn } from '../api/sign';
+import { postSignIn } from './api/sign';
 
 const Login = () => {
+  // const onLogIn = () => {};
+
   return (
     <Layout>
       <Empty height="6rem" />
