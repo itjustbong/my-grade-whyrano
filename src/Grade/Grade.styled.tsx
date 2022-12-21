@@ -2,12 +2,12 @@ import styled from '@emotion/styled';
 
 const HeaderArea = styled.div`
   padding-top: 1rem;
-  height: 5rem;
+  height: 10rem;
   text-align: center;
 `;
 
 const HeaderFont = styled.div`
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: bolder;
 `;
 

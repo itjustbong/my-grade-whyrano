@@ -13,6 +13,13 @@ type Props = {
   onSetterOpenGrade: (e: boolean) => void;
 };
 
+const images = [
+  '/img/scratch1.png',
+  '/img/scratch2.png',
+  '/img/scratch3.png',
+  '/img/scratch4.png',
+];
+
 const GradeScratch = (props: Props) => {
   const subjectRef = useRef<HTMLElement>(null);
 
@@ -21,15 +28,17 @@ const GradeScratch = (props: Props) => {
     props.onSetterOpenGrade(true);
   };
 
+  const randImage = () => images[Math.floor(Math.random() * 4)];
+
   return (
     <Container>
       <SubjectText ref={subjectRef}>{props.subject}</SubjectText>
       <GradeText>{props.grade}</GradeText>
       <SubjectLabel>{props.subject}</SubjectLabel>
       <ScratchCard
-        height={60}
+        height={120}
         width={320}
-        image={'img/gray.png'}
+        image={randImage()}
         finishPercent={30}
         brushSize={10}
         onComplete={onCompleteScratch}

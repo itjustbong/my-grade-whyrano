@@ -6,13 +6,14 @@ const InnerText = styled.div`
   right: 0;
   left: 0;
   margin: 0 auto;
-  top: 30px;
+  top: 60px;
   width: 100px;
   text-align: center;
   transition: all;
 `;
 
 const SubjectText = styled.span`
+  font-size: 1.75rem;
   font-weight: bold;
   z-index: 999;
   position: absolute;
@@ -21,7 +22,7 @@ const SubjectText = styled.span`
   left: 0;
   margin: 0 auto;
   top: 30px;
-  width: 120px;
+  width: 150px;
   text-align: center;
   transition: all;
   text-overflow: ellipsis;
@@ -30,22 +31,21 @@ const SubjectText = styled.span`
 `;
 
 const GradeText = styled(InnerText)`
-  font-size: large;
+  font-size: 2rem;
   color: black;
   font-weight: bold;
 `;
 
 const SubjectLabel = styled(InnerText)`
-  font-size: large;
-  color: gray;
+  font-size: 1.5rem;
+  color: black;
   font-weight: bold;
   text-align: left;
   width: 100%;
   padding-left: 0.25rem;
-  top: 10px;
-  right: 10px;
+  top: 1rem;
+  right: 1rem;
   margin: 0;
-  font-size: 0.75rem;
 `;
 
 const Container = styled.div`
@@ -54,7 +54,6 @@ const Container = styled.div`
   margin: 0 auto;
   border-radius: 0.5rem;
   overflow: hidden;
-  border: 1px solid gray;
 `;
 
 const Spacer = styled.div`
