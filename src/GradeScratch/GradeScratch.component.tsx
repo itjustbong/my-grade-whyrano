@@ -29,6 +29,7 @@ const GradeScratch = (props: Props) => {
         width={320}
         image={'img/gray.png'}
         finishPercent={30}
+        brushSize={10}
         onComplete={onCompleteScratch}
       ></ScratchCard>
     </Container>

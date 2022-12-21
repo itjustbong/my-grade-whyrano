@@ -21,9 +21,12 @@ const SubjectText = styled.span`
   left: 0;
   margin: 0 auto;
   top: 30px;
-  width: 100px;
+  width: 120px;
   text-align: center;
   transition: all;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 `;
 
 const GradeText = styled(InnerText)`
@@ -50,4 +53,8 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-export { SubjectText, Container, GradeText, SubjectLabel };
+const Spacer = styled.div`
+  height: 1rem;
+`;
+
+export { Spacer, SubjectText, Container, GradeText, SubjectLabel };

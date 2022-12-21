@@ -1,7 +1,17 @@
 import styled from '@emotion/styled';
 
-const Hello = styled.div`
+const HeaderArea = styled.div`
+  height: 5rem;
+  text-align: center;
   font-size: large;
+  font-weight: bolder;
 `;
 
-export { Hello };
+const HeaderFont = styled.div`
+  height: 5rem;
+  text-align: center;
+  font-size: large;
+  font-weight: bolder;
+`;
+
+export { HeaderArea };
