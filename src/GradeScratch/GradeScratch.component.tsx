@@ -1,22 +1,29 @@
 import { ReactElement, useRef } from 'react';
 import ScratchCard from 'react-scratchcard-v2';
-import { Container, SubjectText } from './GradeScratch.styled';
+import {
+  Container,
+  GradeText,
+  SubjectLabel,
+  SubjectText,
+} from './GradeScratch.styled';
 
 type Props = {
   subject: string;
+  grade: string;
 };
 
 const GradeScratch = (props: Props) => {
   const subjectRef = useRef<HTMLElement>(null);
 
   const onCompleteScratch = () => {
-    console.log('cleaned');
     subjectRef.current && subjectRef.current.classList.add('subect-opacity');
   };
 
   return (
     <Container>
       <SubjectText ref={subjectRef}>{props.subject}</SubjectText>
+      <GradeText>{props.grade}</GradeText>
+      <SubjectLabel>{props.subject}</SubjectLabel>
       <ScratchCard
         height={60}
         width={320}

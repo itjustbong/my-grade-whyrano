@@ -1,25 +1,53 @@
 import styled from '@emotion/styled';
 
-const SubjectText = styled.span`
+const InnerText = styled.div`
   position: absolute;
-  top: 30px;
-  width: 100px;
   transform: translateY(-50%);
   right: 0;
   left: 0;
   margin: 0 auto;
-  color: black;
+  top: 30px;
+  width: 100px;
   text-align: center;
-  font-weight: bold;
-  z-index: 999;
   transition: all;
 `;
 
+const SubjectText = styled.span`
+  font-weight: bold;
+  z-index: 999;
+  position: absolute;
+  transform: translateY(-50%);
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  top: 30px;
+  width: 100px;
+  text-align: center;
+  transition: all;
+`;
+
+const GradeText = styled(InnerText)`
+  font-size: large;
+  color: black;
+  font-weight: bold;
+`;
+
+const SubjectLabel = styled(InnerText)`
+  font-size: large;
+  color: gray;
+  font-weight: bold;
+  top: 10px;
+  right: 10px;
+  margin: 0;
+  font-size: 0.75rem;
+`;
+
 const Container = styled.div`
+  position: relative;
   width: 320px;
   margin: 0 auto;
   border-radius: 0.5rem;
   overflow: hidden;
 `;
 
-export { SubjectText, Container };
+export { SubjectText, Container, GradeText, SubjectLabel };
