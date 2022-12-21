@@ -1,7 +1,7 @@
 import React from 'react';
 import { Empty, Input, Button, Form } from './Login.styled';
 import { Typography } from 'antd';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 type Props = (id: string, pw: string) => void;
 
