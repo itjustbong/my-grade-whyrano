@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import GradeScratch from '../GradeScratch/GradeScratch.component';
 import { Spacer } from '../GradeScratch/GradeScratch.styled';
+import Loading from '../Loading/Loading';
 import { GradeService } from '../service/service.grade';
 import { LoginService } from '../service/service.sign';
 import SnowFall from '../SnowFall/SnowFall';
@@ -15,6 +16,7 @@ import { GradeInfoClientType } from './Grade.type';
 const Grade = () => {
   const [openGrade, setOpenGrade] = useState<boolean>(false);
   const [gradeList, setGradeList] = useState<GradeInfoClientType[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
   const gradeTimeOut = useRef<ReturnType<typeof setTimeout> | null>(null);
   const user = new LoginService();
   const grades = new GradeService();
@@ -23,8 +25,10 @@ const Grade = () => {
   useEffect(() => {
     if (!user.isUserLogged()) return navigate('/');
     (async () => {
+      setLoading(true);
       const result = await grades.fetchData(user.get());
       setGradeList(result);
+      setLoading(false);
     })();
   }, []);
 
@@ -45,6 +49,7 @@ const Grade = () => {
 
   return (
     <div>
+      {loading && <Loading />}
       {openGrade && <SnowFall />}
       <Header />
       <BottomFlotingButton />
