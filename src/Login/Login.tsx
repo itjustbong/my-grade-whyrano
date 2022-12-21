@@ -1,14 +1,15 @@
 import React from 'react';
-import { Input } from './Login.styled';
+import { Layout, LoginBox, Empty } from './Login.styled';
 import { ReactComponent as MainLogo } from '../assets/main_logo.svg';
 
 const Login = () => {
   return (
-    <div>
-      로그인 화면
+    <Layout>
+      <Empty height="8rem" />
       <MainLogo />
-      <Input />
-    </div>
+      <Empty height="8rem" />
+      <LoginBox />
+    </Layout>
   );
 };
 
