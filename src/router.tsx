@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Grade from './Grade/grade';
+import Grade from './Grade/Grade';
 import Login from './Login/Login';
 
 function Router() {

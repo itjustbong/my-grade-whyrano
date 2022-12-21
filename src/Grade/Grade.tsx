@@ -1,5 +1,7 @@
+import { Hello } from './Grade.styled';
+
 const Grade = () => {
-  return <div>학점 조회 창</div>;
+  return <Hello>학점 조회 창</Hello>;
 };
 
 export default Grade;
