@@ -14,7 +14,7 @@ const Login = () => {
   };
   return (
     <Layout>
-      {/* <EnlargeMedal3D /> */}
+      <EnlargeMedal3D />
       <Empty height="6rem" />
       {/* [Todo] 메인 로고 사이즈 가변으로 ㄱㄱ */}
       <MainLogo />
