@@ -5,9 +5,9 @@ import { ReactComponent as MainLogo } from '../assets/main_logo.svg';
 import { postSignIn } from '../api/sign';
 
 const Login = () => {
-  const onLogin = (id: string, pw: string) => {
-    postSignIn({ id, pw })
-      .then(res => res)
+  const onLogin = async (id: string, pw: string) => {
+    await postSignIn({ id, pw })
+      .then(res => console.log(res))
       .catch(err => err);
   };
   return (

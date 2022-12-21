@@ -1,7 +1,7 @@
 import React from 'react';
 import { Empty, Input, Button, Form } from './Login.styled';
 import { Typography } from 'antd';
-import { sign } from 'crypto';
+import { ToastContainer, toast } from 'react-toastify';
 
 type Props = (id: string, pw: string) => void;
 
@@ -13,30 +13,48 @@ export function LoginBox({ onLogin }: { onLogin: Props }): JSX.Element {
   const onChange = (e: any) => {
     signRef.current = { ...signRef.current, [e.target.id]: e.target.value };
   };
-  const onSubmit = () => {
-    // [Todo] Proxy 패턴으로 만들기 id는 8자리여야 됨
+  const onSubmit = async () => {
+    // [Todo] Proxy 넣어봤음
     const signProxy = new Proxy(signRef.current, {
       get: obj => {
-        if (obj.id.length !== 8)
+        if (obj.id.length !== 8) {
           signErrRef.current = {
             ...signErrRef.current,
             id: '아이디는 8글자여야 합니다.',
           };
-        else if (Number.isNaN(Number(obj.id)))
+          return null;
+        } else if (Number.isNaN(Number(obj.id))) {
           signErrRef.current = {
             ...signErrRef.current,
             id: '아이디는 숫자여야 합니다.',
           };
-        if (obj.pw.length === 0)
+          return null;
+        }
+        if (obj.pw.length === 0) {
           signErrRef.current = {
             ...signErrRef.current,
             pw: '비밀번호를 입력해주세요.',
           };
+          return null;
+        }
       },
     });
 
-    signProxy.id;
-    console.log(signErrRef.current);
+    const notify = (type: 'id' | 'pw') =>
+      toast(signErrRef.current[type], {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
+
+    if (signProxy.id === null) notify('id');
+    else if (signProxy.pw === null) notify('pw');
+    else await onLogin(signProxy.id, signProxy.pw);
   };
 
   return (
