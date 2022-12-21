@@ -1,17 +1,18 @@
 import styled from '@emotion/styled';
 
 const HeaderArea = styled.div`
+  padding-top: 1rem;
   height: 5rem;
   text-align: center;
-  font-size: large;
-  font-weight: bolder;
 `;
 
 const HeaderFont = styled.div`
-  height: 5rem;
-  text-align: center;
-  font-size: large;
+  font-size: 1.25rem;
   font-weight: bolder;
 `;
 
-export { HeaderArea };
+const HeaderUserInfoFont = styled.span`
+  font-size: 0.75rem;
+`;
+
+export { HeaderArea, HeaderFont, HeaderUserInfoFont };

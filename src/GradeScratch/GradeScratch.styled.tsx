@@ -39,6 +39,9 @@ const SubjectLabel = styled(InnerText)`
   font-size: large;
   color: gray;
   font-weight: bold;
+  text-align: left;
+  width: 100%;
+  padding-left: 0.25rem;
   top: 10px;
   right: 10px;
   margin: 0;
@@ -51,6 +54,7 @@ const Container = styled.div`
   margin: 0 auto;
   border-radius: 0.5rem;
   overflow: hidden;
+  border: 1px solid gray;
 `;
 
 const Spacer = styled.div`

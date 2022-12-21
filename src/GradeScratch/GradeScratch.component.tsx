@@ -1,4 +1,4 @@
-import { ReactElement, useRef } from 'react';
+import { useRef } from 'react';
 import ScratchCard from 'react-scratchcard-v2';
 import {
   Container,
@@ -10,6 +10,7 @@ import {
 type Props = {
   subject: string;
   grade: string;
+  onSetterOpenGrade: (e: boolean) => void;
 };
 
 const GradeScratch = (props: Props) => {
@@ -17,6 +18,7 @@ const GradeScratch = (props: Props) => {
 
   const onCompleteScratch = () => {
     subjectRef.current && subjectRef.current.classList.add('subect-opacity');
+    props.onSetterOpenGrade(true);
   };
 
   return (
