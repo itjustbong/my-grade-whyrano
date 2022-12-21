@@ -1,7 +1,11 @@
-import { Hello } from './Grade.styled';
+import GradeScratch from '../GradeScratch/GradeScratch.component';
 
 const Grade = () => {
-  return <Hello>학점 조회 창</Hello>;
+  return (
+    <div>
+      <GradeScratch subject="웹프로그래밍" />
+    </div>
+  );
 };
 
 export default Grade;

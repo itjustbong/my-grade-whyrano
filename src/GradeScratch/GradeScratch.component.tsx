@@ -1,23 +1,30 @@
-import { useRef } from 'react';
+import { ReactElement, useRef } from 'react';
 import ScratchCard from 'react-scratchcard-v2';
+import { Container, SubjectText } from './GradeScratch.styled';
 
-const GradeScratch = () => {
-  const ref = useRef<ScratchCard>(null);
+type Props = {
+  subject: string;
+};
 
-  const onClickReset = () => {
-    ref.current && ref.current.reset();
+const GradeScratch = (props: Props) => {
+  const subjectRef = useRef<HTMLElement>(null);
+
+  const onCompleteScratch = () => {
+    console.log('cleaned');
+    subjectRef.current && subjectRef.current.classList.add('subect-opacity');
   };
 
   return (
-    <div>
+    <Container>
+      <SubjectText ref={subjectRef}>{props.subject}</SubjectText>
       <ScratchCard
+        height={60}
         width={320}
-        height={226}
-        image={'gray'}
-        finishPercent={80}
-        onComplete={() => console.log('complete')}
+        image={'img/gray.png'}
+        finishPercent={30}
+        onComplete={onCompleteScratch}
       ></ScratchCard>
-    </div>
+    </Container>
   );
 };
 
