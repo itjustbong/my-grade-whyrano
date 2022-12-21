@@ -1,26 +1,39 @@
-class LoginInfo {
-  private studentId: string | undefined;
-  private password: string | undefined;
-  static instance: LoginInfo;
+import { gradeServerToClient } from '../Grade/Grade.dto';
+import { GradeInfoClientType } from '../Grade/Grade.type';
+import { postGetMyGrade } from './http/http';
+
+class GradeService {
+  private gradeInfo: GradeInfoClientType[] | undefined;
+  static instance: GradeService;
 
   constructor() {
-    if (LoginInfo.instance) return LoginInfo.instance;
-    LoginInfo.instance = this;
+    if (GradeService.instance) return GradeService.instance;
+    GradeService.instance = this;
+    this.gradeInfo = [];
   }
 
-  set(info: { id: string; pw: string }) {
-    this.password = info.pw;
-    this.studentId = info.id;
+  set(grades: GradeInfoClientType[]) {
+    console.log(grades);
+    this.gradeInfo = grades || [];
   }
 
   get() {
-    return { studentId: this.studentId, password: this.password };
+    return this.gradeInfo;
+  }
+
+  async fetchData(user: { studentId: string; password: string }) {
+    const gradeResult = await postGetMyGrade({
+      student_id: user.studentId,
+      password: user.password,
+    });
+    const result = gradeServerToClient(gradeResult);
+    this.set(result);
+    return result;
   }
 
   clear() {
-    this.studentId = '';
-    this.password = '';
+    this.gradeInfo = [];
   }
 }
 
-export { LoginInfo };
+export { GradeService };

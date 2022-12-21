@@ -9,6 +9,7 @@ export const Layout = styled.div({
   justifyContent: 'center',
   flexDirection: 'column',
   alignItems: 'center',
+  marginBottom: '5rem',
 });
 
 export const Empty = styled('div')<EmptyType>`

@@ -72,14 +72,14 @@ export function LoginBox({ onLogin }: { onLogin: Props }): JSX.Element {
 
 export const InputID = ({ ...props }: any) => (
   <div style={{ display: 'flex', flexDirection: 'column' }}>
-    <Typography.Text style={{ fontSize: '2rem' }}>ID</Typography.Text>
+    <Typography.Text style={{ fontSize: '1rem' }}>ID</Typography.Text>
     <Input id="id" {...props} />
   </div>
 );
 
 export const InputPW = ({ ...props }: any) => (
   <div style={{ display: 'flex', flexDirection: 'column' }}>
-    <Typography.Text style={{ fontSize: '2rem' }}>PW</Typography.Text>
+    <Typography.Text style={{ fontSize: '1rem' }}>PW</Typography.Text>
     <Input id="pw" type="password" {...props} />
   </div>
 );

@@ -10,5 +10,11 @@ export const postSignIn = async (data: GradePostType) => {
   }
 };
 
-export const postGetMyGrade = async (data: GradePostType) =>
-  await http.post(`/`, data);
+export const postGetMyGrade = async (data: GradePostType) => {
+  try {
+    const result = await http.post(`/`, data);
+    return result.data;
+  } catch (e) {
+    return -1;
+  }
+};
