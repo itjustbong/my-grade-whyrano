@@ -20,10 +20,9 @@ const Empty = styled('div')<EmptyType>`
 function LoginBox(): JSX.Element {
   return (
     <>
-      <div
+      <form
         style={{
           display: 'flex',
-          minWidth: '15rem',
           flexDirection: 'column',
         }}
       >
@@ -46,7 +45,7 @@ function LoginBox(): JSX.Element {
             borderRadius: '15px',
           }}
         />
-      </div>
+      </form>
       <Empty height="2rem" />
       <Button
         style={{
