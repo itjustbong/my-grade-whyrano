@@ -3,6 +3,8 @@ import { LoginBox } from './Login.component';
 import { Layout, Empty } from './Login.styled';
 import { ReactComponent as MainLogo } from '../assets/main_logo.svg';
 import { postSignIn } from '../api/sign';
+// temp
+import { EnlargeMedal3D } from '../EnlargeMedal3D';
 
 const Login = () => {
   const onLogin = async (id: string, pw: string) => {
@@ -12,6 +14,7 @@ const Login = () => {
   };
   return (
     <Layout>
+      {/* <EnlargeMedal3D /> */}
       <Empty height="6rem" />
       {/* [Todo] 메인 로고 사이즈 가변으로 ㄱㄱ */}
       <MainLogo />
