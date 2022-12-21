@@ -27,7 +27,11 @@ const Grade = () => {
     (async () => {
       setLoading(true);
       const result = await grades.fetchData(user.get());
-      setGradeList(result);
+      if (result === -1) {
+        alert('서버의 부하가 있습니다.\n잠시 후 다시 시도해주세요');
+      } else {
+        setGradeList(result);
+      }
       setLoading(false);
     })();
   }, []);

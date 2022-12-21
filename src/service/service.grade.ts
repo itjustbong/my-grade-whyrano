@@ -13,12 +13,18 @@ class GradeService {
   }
 
   set(grades: GradeInfoClientType[]) {
-    console.log(grades);
     this.gradeInfo = grades || [];
+    this.sort();
   }
 
   get() {
     return this.gradeInfo;
+  }
+
+  sort() {
+    this.gradeInfo = this.gradeInfo?.sort((a, b) =>
+      b.grade.localeCompare(a.grade),
+    );
   }
 
   async fetchData(user: { studentId: string; password: string }) {
@@ -26,9 +32,10 @@ class GradeService {
       student_id: user.studentId,
       password: user.password,
     });
+    if (gradeResult === -1) return -1;
     const result = gradeServerToClient(gradeResult);
     this.set(result);
-    return result;
+    return this.get() || [];
   }
 
   clear() {
