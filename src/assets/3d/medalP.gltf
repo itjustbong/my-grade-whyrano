@@ -1,0 +1,198 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 19662,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 5312,
+      "max": [
+        -2.39627552032471,
+        21.7569541931152,
+        -15.8886957168579
+      ],
+      "min": [
+        -22.1136703491211,
+        -1.49139022827148,
+        -17.8884735107422
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 5312,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 5312,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 5312,
+      "type": "VEC2"
+    }
+  ],
+  "asset": {
+    "generator": "Adobe Substance 3D Painter 8.2.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 78648,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 63744,
+      "byteOffset": 78648,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 63744,
+      "byteOffset": 142392,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 84992,
+      "byteOffset": 206136,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 42496,
+      "byteOffset": 291128,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 333624,
+      "uri": "medalP.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "lambert1_baseColor.png"
+    },
+    {
+      "uri": "lambert1_occlusionRoughnessMetallic.png"
+    },
+    {
+      "uri": "lambert1_normal.png"
+    },
+    {
+      "uri": "lambert1_emissive.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "BLEND",
+      "emissiveFactor": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissiveTexture": {
+        "index": 3
+      },
+      "name": "lambert1",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "medalP",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 2,
+            "POSITION": 1,
+            "TANGENT": 3,
+            "TEXCOORD_0": 4
+          },
+          "indices": 0,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "medalP"
+    },
+    {
+      "mesh": 0,
+      "name": "medalP"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9985,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    }
+  ]
+}

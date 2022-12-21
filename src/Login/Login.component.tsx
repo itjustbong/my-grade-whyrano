@@ -16,7 +16,7 @@ export function LoginBox({ onLogin }: { onLogin: Props }): JSX.Element {
   const onSubmit = async () => {
     // [Todo] Proxy 넣어봤음
     const signProxy = new Proxy(signRef.current, {
-      get: obj => {
+      get: (obj, prop, receiver) => {
         if (obj.id.length !== 8) {
           signErrRef.current = {
             ...signErrRef.current,
@@ -36,7 +36,7 @@ export function LoginBox({ onLogin }: { onLogin: Props }): JSX.Element {
             pw: '비밀번호를 입력해주세요.',
           };
           return null;
-        }
+        } else return Reflect.get(obj, prop, receiver);
       },
     });
 
