@@ -1,5 +1,5 @@
 import { Space } from 'antd';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import GradeScratch from '../GradeScratch/GradeScratch.component';
 import { Spacer } from '../GradeScratch/GradeScratch.styled';
 import SnowFall from '../SnowFall/SnowFall';
@@ -9,10 +9,16 @@ import { GRADE_MOCK_UP } from './Grade.mockup';
 
 const Grade = () => {
   const [openGrade, setOpenGrade] = useState<boolean>(false);
+  const gradeTimeOut = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const onSetterOpenGrade = (e: boolean) => {
-    setOpenGrade(e);
-    // setTimeout(() => setOpenGrade(false), 5000);
+    if (gradeTimeOut.current) {
+      clearTimeout(gradeTimeOut.current);
+      gradeTimeOut.current = null;
+      setOpenGrade(false);
+    }
+    setTimeout(() => setOpenGrade(e), 0);
+    gradeTimeOut.current = setTimeout(() => setOpenGrade(false), 6000);
   };
 
   return (
