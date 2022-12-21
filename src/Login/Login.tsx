@@ -5,9 +5,9 @@ import { ReactComponent as MainLogo } from '../assets/main_logo.svg';
 const Login = () => {
   return (
     <Layout>
-      <Empty height="8rem" />
+      <Empty height="6rem" />
       <MainLogo />
-      <Empty height="8rem" />
+      <Empty height="6rem" />
       <LoginBox />
     </Layout>
   );

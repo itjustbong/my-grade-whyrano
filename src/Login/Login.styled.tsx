@@ -47,8 +47,17 @@ function LoginBox(): JSX.Element {
           }}
         />
       </div>
-
-      <Button>로그인하기</Button>
+      <Empty height="2rem" />
+      <Button
+        style={{
+          backgroundColor: '#f4f4f4',
+          height: '3rem',
+          width: '12rem',
+          borderRadius: '15px',
+        }}
+      >
+        로그인 하기
+      </Button>
     </>
   );
 }
