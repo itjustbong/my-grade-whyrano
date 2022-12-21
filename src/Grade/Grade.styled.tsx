@@ -1,7 +1,18 @@
 import styled from '@emotion/styled';
 
-const Hello = styled.div`
-  font-size: large;
+const HeaderArea = styled.div`
+  padding-top: 1rem;
+  height: 5rem;
+  text-align: center;
 `;
 
-export { Hello };
+const HeaderFont = styled.div`
+  font-size: 1.25rem;
+  font-weight: bolder;
+`;
+
+const HeaderUserInfoFont = styled.span`
+  font-size: 0.75rem;
+`;
+
+export { HeaderArea, HeaderFont, HeaderUserInfoFont };
