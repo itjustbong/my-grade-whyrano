@@ -1,17 +1,14 @@
-import {
-  FlotingButton,
-  HeaderArea,
-  HeaderFont,
-  HeaderUserInfoFont,
-} from './Grade.styled';
+import { FlotingButton, HeaderArea, HeaderUserInfoFont } from './Grade.styled';
 import { ReactComponent as MainLogo } from '../assets/main_logo.svg';
+import { LoginService } from '../service/service.sign';
 
 const Header = () => {
+  const user = new LoginService();
   return (
     <HeaderArea>
       <MainLogo height={'5rem'} width={'100%'} />
       <br />
-      <HeaderUserInfoFont>20170368님</HeaderUserInfoFont>{' '}
+      <HeaderUserInfoFont>{user.get().studentId}님</HeaderUserInfoFont>{' '}
       <HeaderUserInfoFont>안녕하세요</HeaderUserInfoFont>
     </HeaderArea>
   );

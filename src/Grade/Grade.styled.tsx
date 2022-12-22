@@ -12,7 +12,7 @@ const HeaderFont = styled.div`
 `;
 
 const HeaderUserInfoFont = styled.span`
-  font-size: 0.75rem;
+  font-size: 0.875rem;
 `;
 
 const FlotingButton = styled.div`
@@ -22,12 +22,14 @@ const FlotingButton = styled.div`
   right: 1rem;
   border-radius: 50%;
   position: fixed;
+  z-index: 99;
 `;
 
 const LogoutText = styled.div`
   text-decoration: underline;
   text-align: center;
   color: gray;
+  cursor: pointer;
 `;
 
 export {

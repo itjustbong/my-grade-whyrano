@@ -30,6 +30,9 @@ const GradeScratch = (props: Props) => {
 
   const randImage = () => images[Math.floor(Math.random() * 4)];
 
+  if (props.grade === ' ') {
+    return <div></div>;
+  }
   return (
     <Container>
       <SubjectText ref={subjectRef}>{props.subject}</SubjectText>
