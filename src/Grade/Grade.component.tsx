@@ -16,7 +16,7 @@ const Header = () => {
 
 const BottomFlotingButton = () => {
   return (
-    <FlotingButton>
+    <FlotingButton onClick={() => location.reload()}>
       <img src="/img/refresh.png" width={'100%'} />
     </FlotingButton>
   );

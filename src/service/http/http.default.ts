@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 // [Todo] env 설정하기
-const BASE_URL = 'http://115.85.181.157:8000';
+const BASE_URL = 'https://my-grade-whyrno.ga';
 
 const http = axios.create({
   headers: { Accept: 'application/json' },
   baseURL: BASE_URL,
-  timeout: 5000,
+  timeout: 10000,
 });
 
 export default http;

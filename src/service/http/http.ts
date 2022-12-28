@@ -12,7 +12,7 @@ export const postSignIn = async (data: GradePostType) => {
 
 export const postGetMyGrade = async (data: GradePostType) => {
   try {
-    const result = await http.post(`/`, data);
+    const result = await http.post(`/grade?year=2022&semester=2`, data);
     return result.data;
   } catch (e) {
     return -1;
